@@ -170,7 +170,7 @@ public class MCPClient {
         Map<String, Object> params = new HashMap<>();
         params.put("name", toolName);
         params.put("arguments", arguments);
-        mcpRequest.setParams(params);
+        mcpRequest.setParams(objectMapper.valueToTree(params));
         
         String requestBody = objectMapper.writeValueAsString(mcpRequest);
         
